@@ -18,17 +18,26 @@ namespace _5_gyak
     
     {
         BindingList<RateData> Rates = new BindingList<RateData>();
+
+        BindingList<string> Currencies = new BindingList<string>();
         
         public Form1()
         {
+            InitializeComponent();
+            GetCurrenciesRequest();
             RefreshData();
 
+        }
+
+        private void GetCurrenciesRequest()
+        {
+            
         }
 
         private void RefreshData()
         {
             Rates.Clear();
-            InitializeComponent();
+            
             dataGridView1.DataSource = Rates;
             GetExchangeRates();
             GetXml();
@@ -107,6 +116,7 @@ namespace _5_gyak
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
             RefreshData();
+            comboBox1.DataSource = Currencies;
         }
     }
 }
