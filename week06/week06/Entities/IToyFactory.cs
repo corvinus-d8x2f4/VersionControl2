@@ -9,9 +9,9 @@ namespace week06.Entities
 {
     public class BallFactory : IToyFactory
     {
-        public Abstractions.Toy CreateNew()
+        public Toy CreateNew()
         {
-            return new Toy();
+            return new Ball();
         }
     }
 }

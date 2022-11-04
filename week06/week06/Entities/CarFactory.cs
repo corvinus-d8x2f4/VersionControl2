@@ -7,9 +7,9 @@ using week06.Abstractions;
 
 namespace week06.Entities
 {
-    public class CarFactory : Abstractions.IToyFactory
+    public class CarFactory : IToyFactory
     {
-        public Abstractions.Toy CreateNew()
+        public Abstraction.Toy CreateNew()
         {
             return new Car();
         }
