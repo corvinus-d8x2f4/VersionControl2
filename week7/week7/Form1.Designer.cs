@@ -46,7 +46,7 @@ namespace week7
             // dataGridView2
             // 
             this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView2.Location = new System.Drawing.Point(443, 180);
+            this.dataGridView2.Location = new System.Drawing.Point(86, 239);
             this.dataGridView2.Name = "dataGridView2";
             this.dataGridView2.Size = new System.Drawing.Size(240, 150);
             this.dataGridView2.TabIndex = 1;
