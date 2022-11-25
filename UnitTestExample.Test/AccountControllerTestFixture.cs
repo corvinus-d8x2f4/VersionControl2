@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using UnitTestExample.Controllers;
 
@@ -44,11 +45,37 @@ namespace UnitTestExample.Test
             // Arrange
             var accountController = new AccountController();
 
+            if (password.Length  < 8)
+            {
+                return false;
+            }
+
+            if (!password.Any(char.IsUpper))
+                return false;
+
+            if (!password.Any(char.IsLower))
+                return false;
+
+            if (password.Contains(" "))
+                return false;
             // Act
             var actualResult = accountController.ValidatePassword(password);
 
             // Assert
             Assert.AreEqual(expectedResult, actualResult);
+        }
+        public void TestRegisterHappyPath(string email, string password)
+        {
+            // Arrange
+            var accountController = new AccountController();
+
+            // Act
+            var actualResult = accountController.Register(email, password);
+
+            // Assert
+            Assert.AreEqual(email, actualResult.Email);
+            Assert.AreEqual(password, actualResult.Password);
+            Assert.AreNotEqual(Guid.Empty, actualResult.ID);
         }
     }
 }
