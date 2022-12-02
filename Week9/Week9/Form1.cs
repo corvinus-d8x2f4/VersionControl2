@@ -54,12 +54,12 @@ namespace Week9
                 while (!sr.EndOfStream)
                 {
                     var line = sr.ReadLine().Split(';');
-                    birthProbabilities.Add(new BirthProbability()
+                    BirthProbability p = new BirthProbability
                     {
                         Kor = int.Parse(line[0]),
                         numchild = int.Parse(line[1]),
-                        valoszin = int.Parse(line[2])
-                    });
+                        valoszin = double.Parse(line[2])
+                    };
                 }
             }
 
@@ -79,7 +79,7 @@ namespace Week9
                     {
                         Gender = (Gender)int.Parse(line[0]),
                         KorHal = int.Parse(line[1]),
-                        HalalValoszin = int.Parse(line[2])
+                        HalalValoszin = double.Parse(line[2])
                     });
                 }
             }
@@ -141,6 +141,11 @@ namespace Week9
                     Population.Add(újszülött);
                 }
             }
+        }
+
+        private void numericUpDown1_ValueChanged(object sender, EventArgs e)
+        {
+            // valami
         }
     }
 }
