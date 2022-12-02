@@ -22,6 +22,11 @@ namespace Week9
         public Form1()
         {
             InitializeComponent();
+            
+        }
+
+        private void Simulation()
+        {
             Population = GetPopulation(@"C:\Temp\nép.csv");
             BirthProbabilities = GetBirthProbabilities(@"C:\Temp\születés.csv");
             DeathProbabilities = GetDeathProbabilities(@"C:\Temp\halál.csv");
@@ -146,6 +151,10 @@ namespace Week9
         private void numericUpDown1_ValueChanged(object sender, EventArgs e)
         {
             // valami
+        }
+        private void button2_Click(object sender, EventArgs e)
+        {
+            Simulation();
         }
     }
 }
